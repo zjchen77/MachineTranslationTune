@@ -17,13 +17,13 @@ model_checkpoint = "Helsinki-NLP/opus-mt-en-zh"
 
 
 _URLs = {    # 本地文件的路径
-    'train': "/home/zhangcw/zjchen/translation2019zh/TM-train.csv",
-    #'train': "/home/zhangcw/zjchen/translation2019zh/translation2019zh_train.json",
+    #'train': "/home/zhangcw/zjchen/translation2019zh/TM-train.csv",
+    'train': "/home/zhangcw/zjchen/translation2019zh/translation2019zh_train.json",
     'dev': "/home/zhangcw/zjchen/translation2019zh/TM-valid.csv"  
 }
 
 
-dataset = load_dataset('csv', data_files=_URLs['train'])
+dataset = load_dataset('json', data_files=_URLs['train'])
 validation = load_dataset('csv', data_files=_URLs['dev'])
 metric = load_metric("/home/zhangcw/zjchen/translation2019zh/sacrebleu.py")
 

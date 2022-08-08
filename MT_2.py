@@ -37,8 +37,8 @@ max_target_length = 128
 # source_lang = "english"
 # target_lang = "chinese"
 def preprocess_function(examples):
-    inputs = [prefix + ex for ex in examples["english"]]
-    targets = [ex for ex in examples["chinese"]]
+    inputs = [prefix + ex for ex in examples["English"]]
+    targets = [ex for ex in examples["Chinese"]]
     model_inputs = tokenizer(inputs, max_length=max_input_length, truncation=True)
     # Setup the tokenizer for targets
     with tokenizer.as_target_tokenizer():
